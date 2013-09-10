@@ -1,0 +1,16 @@
+== VetDoc
+
+== Getting Started
+
+  * Please run "rake db:migrate"
+  * Then run "rake db:seed"
+  
+== Sceanrios
+
+1. As the owner of the veterinary practice, I have two additional veterinary doctors Bob and Susan. I should be able to track the  information about my fellow veterinary doctors and myself.
+
+2. As the receptionist of the veterinary practice, I should be able to schedule an appointment for a customer's pet with a specific veterinary doctor. 
+
+3. As one of the practicing veterinary doctors, I should be able to record the information about a customer's pet.
+
+4. As a customer, I should be able to see when my pet is scheduled for their next appointment.

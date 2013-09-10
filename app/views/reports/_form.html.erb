@@ -1,0 +1,45 @@
+<%= form_for(@report) do |f| %>
+  <% if @report.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@report.errors.count, "error") %> prohibited this report from being saved:</h2>
+
+      <ul>
+      <% @report.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%=f.hidden_field :appointment_id, :value => params[:appointment_id]%>
+  <div class="field">
+    <%= f.label :name_of_pet %><br />
+    <%= f.text_field :name_of_pet %>
+  </div>
+  <div class="field">
+    <%= f.label :type_of_pet %><br />
+    <%= f.text_field :type_of_pet %>
+  </div>
+  <div class="field">
+    <%= f.label :breed %><br />
+    <%= f.select :breed, ['Dog', 'Cat', 'Bird'] %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br />
+    <%= f.number_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br />
+    <%= f.number_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :date_of_last_visit %><br />
+    <%= f.datetime_select :date_of_last_visit %>
+  </div>
+  <div class="field">
+    <%= f.label :doctor_id %><br />
+    <%= f.select :doctor_id, Doctor.all.collect {|i| [i.name, i.id]}, {:include_blank => true}, {:selected => params[:doctor_id]} %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

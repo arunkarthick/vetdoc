@@ -1,0 +1,28 @@
+<h2>My Appointments</h2>
+<table>
+	<thead>
+		<tr>
+			<td>Date of Visit</td>
+			<td>Pet</td>
+			<td>Customer</td>
+			<td></td>
+		</tr>
+	</thead>
+	<tbody>
+		<% @appointments.each do |a|%>
+		  <tr>
+  			<td><%= a.date_of_visit.to_s%></td>
+  			<td><%= a.pet%></td>
+  			<td><%= a.customer.name%></td>
+  			<td><%=link_to "Details", doctor_appointment_path(current_user, a)%></td>
+			<td>
+				<% if r=a.report%>
+				 <%=link_to "Report", report_path(r)%>
+				 <% else %>
+				  <%=link_to "Create Report", new_doctor_appointment_report_path(current_user, a)%>
+				 <% end %>
+			</td>
+		  </tr>
+		<% end %>
+	</tbody>
+</table>

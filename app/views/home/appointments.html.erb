@@ -1,0 +1,24 @@
+<h2>Appointments</h2>
+<p><%= link_to "New Appointment", new_appointment_path%></p>
+<table>
+	<thead>
+		<tr>
+			<td>Date of Visit</td>
+			<td>Pet</td>
+			<td>Customer</td>
+			<td>Reminder Required</td>
+			<td></td>
+		</tr>
+	</thead>
+	<tbody>
+		<% @appointments.each do |a|%>
+		  <tr>
+  			<td><%= a.date_of_visit.strftime('%m/%d/%Y %H:%M')%></td>
+  			<td><%= a.pet%></td>
+  			<td><%= a.customer.name%></td>
+  			<td><%= a.doctor.name %></td>
+  			<td><%=link_to "Details", appointment_path(a)%></td>
+		  </tr>
+		<% end %>
+	</tbody>
+</table>

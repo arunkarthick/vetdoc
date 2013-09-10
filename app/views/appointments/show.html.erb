@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Pet:</b>
+  <%= @appointment.pet %>
+</p>
+
+<p>
+  <b>Date of visit:</b>
+  <%= @appointment.date_of_visit %>
+</p>
+
+<p>
+  <b>Customer:</b>
+  <%= @appointment.customer.name %>
+</p>
+
+<p>
+  <b>Doctor:</b>
+  <%= @appointment.doctor.name %>
+</p>
+
+<p>
+  <b>Reminder required:</b>
+  <%= @appointment.reminder_required %>
+</p>
+
+<p>
+  <b>Reason for visit:</b>
+  <%= @appointment.reason_for_visit %>
+</p>
+
+
+<%= link_to 'Edit', edit_appointment_path(@appointment) %> |
+<%= link_to 'Back', appointments_path %>

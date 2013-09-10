@@ -1,0 +1,20 @@
+<h2>My Appointments</h2>
+<table>
+	<thead>
+		<tr>
+			<td>Pet</td>
+			<td>Date of Next Appointment</td>
+			<td>Reason for visit</td>
+			<td></td>
+		</tr>
+	</thead>
+	<tbody>
+		<% @appointments.each do |a|%>
+		  <tr>
+			<td><%= a.pet%></td>
+  			<td><%= a.date_of_visit.to_s%></td>		
+  			<td><%= a.reason_for_visit%></td>
+		  </tr>
+		<% end %>
+	</tbody>
+</table>
